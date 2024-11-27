@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Полтава - Моє Батьківщина</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #228B22;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .image-container {
+            position: relative;
+            margin: 20px;
+            width: 550px;
+            cursor: pointer;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+
+        .caption {
+            margin-top: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .tooltip {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            text-align: center;
+            line-height: 1.5;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            z-index: 10;
+            max-width: 90%;
+            width: 400px;
+        }
+
+        .image-container.active .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        footer {
+            background-color: #228B22;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: auto;
+        }
+
+        /* Адаптивність */
+        @media (max-width: 768px) {
+            .gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .image-container {
+                width: 90%;
+            }
+
+            .tooltip {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Полтава - Моє Батьківщина</h1>
+    </header>
+
+    <div class="gallery">
+
+        <!-- Свято-Успенський кафедральний собор -->
+        <div class="image-container" onclick="showTooltip(this)">
+            <img src="image/uspensky_cathedral.jpg" alt="Свято-Успенський кафедральний собор">
+            <div class="tooltip">
+                Свято-Успенський кафедральний собор — це перлина архітектури Полтави. Його історія сягає XVIII століття, коли його збудували як символ духовного відродження. У стінах собору зберігаються унікальні стародавні ікони, серед яких особливою популярністю користується ікона Успіння Богородиці. У соборі проводяться служби, концерти духовної музики, а також екскурсії для туристів.
+            </div>
+            <div class="caption">Свято-Успенський кафедральний собор</div>
+        </div>
+
+        <!-- Полтавський краєзнавчий музей -->
+        <div class="image-container" onclick="showTooltip(this)">
+            <img src="image/museum_poltava.jpg" alt="Полтавський краєзнавчий музей">
+            <div class="tooltip">
+                Полтавський краєзнавчий музей — це музей, який збирає понад 300 тисяч експонатів. Серед них — археологічні знахідки, старовинні манускрипти, народне мистецтво та вироби ремісників Полтавщини. Музей пропонує інтерактивні виставки, які розповідають про історію регіону, а також майстер-класи з народних ремесел.
+            </div>
+            <div class="caption">Полтавський краєзнавчий музей</div>
+        </div>
+
+        <!-- Кругла площа -->
+        <div class="image-container" onclick="showTooltip(this)">
+            <img src="image/krugla_ploshcha.jpg" alt="Кругла площа">
+            <div class="tooltip">
+                Кругла площа — архітектурне серце Полтави. Вона була створена як частина генерального плану міста у XIX столітті. Тут розташовано корпуси адміністративних будівель, а також фонтан, який є улюбленим місцем зустрічей містян. Щороку тут проводяться ярмарки, фестивалі та концерти.
+            </div>
+            <div class="caption">Кругла площа</div>
+        </div>
+
+        <!-- Каштанова алея -->
+        <div class="image-container" onclick="showTooltip(this)">
+            <img src="image/kashtanova_aleia.jpg" alt="Каштанова алея">
+            <div class="tooltip">
+                Каштанова алея — це зелений оазис у центрі міста. Вона простягається уздовж мальовничого берега річки. Влітку каштани дарують прохолоду, а восени радують золотим листям. Алея є популярним місцем для занять спортом, прогулянок і пікніків.
+            </div>
+            <div class="caption">Каштанова алея</div>
+        </div>
+
+        <!-- Музей-садиба Івана Котляревського -->
+        <div class="image-container" onclick="showTooltip(this)">
+            <img src="image/muzey_kotliarevskogo.jpg" alt="Музей-садиба Івана Котляревського">
+            <div class="tooltip">
+                Музей-садиба Івана Котляревського — це історичний комплекс, де збережено атмосферу XVIII століття. Відвідувачі можуть побачити кімнати, де працював автор "Енеїди", а також експонати, що ілюструють його побут та творчість.
+            </div>
+            <div class="caption">Музей-садиба Івана Котляревського</div>
+        </div>
+
+        <!-- Ротонда Дружби народів -->
+        <div class="image-container" onclick="showTooltip(this)">
+            <img src="image/rotonda_druzhby_narodiv.jpg" alt="Ротонда Дружби народів">
+            <div class="tooltip">
+                Ротонда Дружби народів символізує єдність різних національностей, що мешкають у Полтаві. Ця архітектурна споруда, оточена парком, є чудовим місцем для відпочинку. З ротонди відкривається прекрасний краєвид на місто.
+            </div>
+            <div class="caption">Ротонда Дружби народів</div>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2024 Полтава - Моє Батьківщина
+    </footer>
+
+    <script>
+        function showTooltip(container) {
+            const tooltip = container.querySelector('.tooltip');
+            if (container.classList.contains('active')) {
+                container.classList.remove('active');
+            } else {
+                document.querySelectorAll('.image-container.active').forEach(el => el.classList.remove('active'));
+                container.classList.add('active');
+            }
+        }
+
+        document.addEventListener('click', function(event) {
+            const containers = document.querySelectorAll('.image-container');
+            containers.forEach(container => {
+                if (!container.contains(event.target)) {
+                    container.classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

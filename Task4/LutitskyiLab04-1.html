@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Рядок, що біжить</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: Verdana, sans-serif;
+            color: #000000;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 35pt;
+            font-weight: bold;
+            color: #000000;
+            margin-bottom: 50px;
+        }
+        .marquee-container {
+            width: 800px;
+            height: 50px;
+            background-color: #fd0da0;
+            border: 2px solid #dad61f;
+            border-radius: 5px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .marquee-text {
+            display: inline-block;
+            white-space: nowrap;
+            position: absolute;
+            animation: marquee 10s linear infinite;
+            font-family: Arial, sans-serif;
+            font-size: 20pt;
+            color: #00f300;
+            font-weight: bold;
+            font-style: italic;
+        }
+        @keyframes marquee {
+            0% { left: 100%; }
+            100% { left: -100%; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Рядок, що біжить</h1>
+    <div class="marquee-container">
+        <div class="marquee-text">Бігаючий рядок</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Комп'ютерні Деталі</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f4f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .menu a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .menu a:hover {
+            background-color: #575757;
+            color: white;
+        }
+
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .content h2 {
+            color: #333333;
+            text-align: center;
+        }
+
+        .component {
+            margin-bottom: 20px;
+        }
+
+        .component h3 {
+            color: #555555;
+            border-bottom: 1px solid #dddddd;
+            padding-bottom: 5px;
+        }
+
+        .component p {
+            color: #666666;
+            line-height: 1.6;
+        }
+
+        .small {
+            font-size: 12px;
+            color: #888888;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .menu a {
+                float: none;
+                width: 100%;
+                text-align: left;
+            }
+            .content {
+                margin: 10px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <a href="#cpu">Процесор (CPU)</a>
+        <a href="#gpu">Відеокарта (GPU)</a>
+        <a href="#ram">Оперативна пам'ять (RAM)</a>
+        <a href="#storage">Накопичувачі (SSD/HDD)</a>
+        <a href="#motherboard">Материнська плата</a>
+    </div>
+    <div class="content">
+        <h2>Основні Комп'ютерні Деталі</h2>
+        <div class="component" id="cpu">
+            <h3>Процесор (CPU)</h3>
+            <p>
+                Центральний процесорний блок (CPU) є мозком комп'ютера, який виконує більшість обчислень. Вибір процесора визначає продуктивність системи, тому важливо обирати модель, яка відповідає вашим потребам.
+            </p>
+        </div>
+        <div class="component" id="gpu">
+            <h3>Відеокарта (GPU)</h3>
+            <p>
+                Відеокарта відповідає за обробку графічних даних та відображення їх на моніторі. Вона важлива для ігор, графічного дизайну та інших ресурсомістких задач.
+            </p>
+        </div>
+        <div class="component" id="ram">
+            <h3>Оперативна пам'ять (RAM)</h3>
+            <p>
+                Оперативна пам'ять зберігає дані, з якими працює процесор у даний момент. Більше обсягу RAM дозволяє комп'ютеру одночасно виконувати більше завдань без затримок.
+            </p>
+        </div>
+        <div class="component" id="storage">
+            <h3>Накопичувачі (SSD/HDD)</h3>
+            <p>
+                Твердотільні накопичувачі (SSD) забезпечують швидкий доступ до даних та швидке завантаження системи, тоді як жорсткі диски (HDD) пропонують більше місця для зберігання за нижчою ціною.
+            </p>
+        </div>
+        <div class="component" id="motherboard">
+            <h3>Материнська плата</h3>
+            <p>
+                Материнська плата з'єднує всі компоненти комп'ютера та забезпечує їхню взаємодію. Вибір материнської плати залежить від типу процесора, розширюваності та інших характеристик системи.
+            </p>
+        </div>
+
+    </div>
+    <div class="small">
+        <p>Адреса поточного тексту: <strong>ШІ</strong></p>
+        <p>Автор потужної сторінки: <strong>Максим Лутицький</strong></p>
+    </div>
+
+</body>
+</html>

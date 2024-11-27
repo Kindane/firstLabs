@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Підтвердження Отримання</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .confirmation {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #27ae60;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #2980b9;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #1c5980;
+        }
+    </style>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</head>
+<body>
+    <div class="confirmation">
+        <h2>Ваша форма прийнята до обробки. Дякуємо за звернення!</h2>
+        <button onclick="goBack()">Повернутися назад</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Історія комп'ютерних ігор</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 36px;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 10px;
+        }
+
+        /* Перший стиль - з градієнтним фоном та тінню */
+        .h2-modern {
+            background: linear-gradient(45deg, #2193b0, #6dd5ed);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 24px;
+        }
+
+        /* Другий стиль - з декоративною рамкою */
+        .h2-classic {
+            color: #8e44ad;
+            font-size: 28px;
+            border: 2px solid #8e44ad;
+            padding: 10px 20px;
+            display: inline-block;
+            position: relative;
+            margin-left: 20px;
+        }
+
+        .h2-classic::before {
+            content: "";
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            background: #8e44ad;
+            border-radius: 50%;
+        }
+
+        /* Третій стиль - з підкресленням та іконкою */
+        .h2-minimalist {
+            color: #2c3e50;
+            font-size: 26px;
+            border-bottom: 3px solid #e74c3c;
+            padding-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .h2-minimalist::before {
+            content: "★";
+            color: #e74c3c;
+            font-size: 24px;
+        }
+
+        /* Стилі для контенту */
+        p {
+            line-height: 1.6;
+            color: #333;
+            margin: 20px 0;
+            text-align: justify;
+        }
+
+        .section {
+            margin: 40px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <h1>Історія комп'ютерних ігор</h1>
+
+    <div class="section">
+        <h2 class="h2-modern">Золота ера аркадних автоматів</h2>
+        <p>1970-ті роки стали періодом розквіту аркадних ігрових автоматів. Такі ігри як Pong, Space Invaders та Pac-Man назавжди змінили індустрію розваг та заклали основи сучасного геймінгу.</p>
+    </div>
+
+    <div class="section">
+        <h2 class="h2-classic">Революція домашніх консолей</h2>
+        <p>Nintendo Entertainment System (NES) зробила справжній прорив у сфері домашніх розваг, представивши світу легендарні серії ігор Mario та Zelda.</p>
+    </div>
+
+    <div class="section">
+        <h2 class="h2-minimalist">Епоха персональних комп'ютерів</h2>
+        <p>Поява доступних персональних комп'ютерів відкрила нові можливості для розробників та гравців, започаткувавши жанри стратегій та пригодницьких ігор.</p>
+    </div>
+
+    <div class="section">
+        <h2 class="h2-modern">3D революція</h2>
+        <p>1990-ті роки принесли революцію 3D-графіки. PlayStation та інші консолі нового покоління дозволили створювати тривимірні світи небаченої раніше якості.</p>
+    </div>
+
+    <div class="section">
+        <h2 class="h2-classic">Онлайн ігри</h2>
+        <p>Розвиток інтернету породив нову еру багатокористувацьких онлайн ігор, де мільйони гравців могли взаємодіяти в реальному часі.</p>
+    </div>
+
+    <div class="section">
+        <h2 class="h2-minimalist">Мобільний геймінг</h2>
+        <p>Смартфони зробили ігри доступними для всіх, створивши новий величезний ринок мобільних ігор та змінивши способи взаємодії з іграми.</p>
+    </div>
+</body>
+</html>

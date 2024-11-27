@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Наша Група</title>
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            background-color: #333;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #FFD700;
+        }
+        .image-container {
+            text-align: center;
+            position: relative;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 5px solid #FFD700;
+            border-radius: 10px;
+        }
+        .tooltip {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            display: none;
+            pointer-events: none;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <h1>Наша Група</h1>
+
+    <div class="image-container">
+        <img src="/Task6/image/group.jpg" usemap="#group-map" alt="Фото групи">
+
+        <div id="tooltip" class="tooltip"></div>
+
+        <map name="group-map">
+            <area target="" alt="Андрій" title="Андрій" href="#andrii" coords="88,122,38,151,25,228,41,264,36,312,52,313,68,404,53,507,65,541,97,539,125,524,94,489,119,390,142,313,141,185,140,151,118,143,130,95,118,64,93,66,78,95,83,108" shape="poly" data-tooltip="Андрій – Король Python">
+            <area target="" alt="Інна" title="Інна" href="#inna" coords="199,92,178,98,165,168,150,174,142,210,144,256,155,258,147,290,141,314,154,401,155,514,151,532,205,540,242,535,210,512,212,448,230,311,226,273,250,270,240,200,219,176,224,140,220,102" shape="poly" data-tooltip="Інна – Головна по UI/UX">
+            <area target="" alt="Ігор" title="Ігор" href="#ihor" coords="263,65,241,78,248,107,259,128,269,132,269,147,244,163,242,204,250,251,258,251,252,313,258,368,280,506,244,523,244,532,287,535,294,544,338,542,348,422,336,370,344,302,345,257,381,228,345,142,296,128,299,98,287,66" shape="poly" data-tooltip="Ігор – Гуру алгоритмів">
+        </map>
+    </div>
+
+    <div id="andrii">
+        <h2>Андрій – Король Python</h2>
+        <p>Андрій – справжній майстер Python, його скрипти автоматизують усе!</p>
+    </div>
+
+    <div id="inna">
+        <h2>Інна – Головна по UI/UX</h2>
+        <p>Інна знає, як створити ідеальний інтерфейс, щоб усі користувачі були задоволені.</p>
+    </div>
+
+    <div id="ihor">
+        <h2>Ігор – Гуру алгоритмів</h2>
+        <p>Ігор – математичний геній, його алгоритми дивують навіть викладачів.</p>
+    </div>
+
+    <script>
+        const tooltip = document.getElementById('tooltip');
+        const areas = document.querySelectorAll('area');
+
+        areas.forEach(area => {
+            area.addEventListener('mousemove', (e) => {
+                const text = area.getAttribute('data-tooltip');
+                tooltip.textContent = text;
+                tooltip.style.display = 'block';
+                tooltip.style.left = e.pageX + 10 + 'px';
+                tooltip.style.top = e.pageY + 10 + 'px';
+            });
+
+            area.addEventListener('mouseleave', () => {
+                tooltip.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

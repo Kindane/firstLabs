@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Розклад занять групи</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #333333;
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        table.days-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+        }
+        table.days-table td {
+            padding: 15px;
+            font-size: 20px;
+            text-align: center;
+            border: 1px solid #2c3e50;
+        }
+        table.days-table a {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        table.days-table a:hover {
+            color: #1abc9c;
+        }
+        section.schedule-section {
+            margin-bottom: 60px;
+        }
+        table.schedule-table {
+            width: 75%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        table.schedule-table th, table.schedule-table td {
+            border: 1px solid #dddddd;
+            padding: 12px;
+            font-size: 18px;
+            text-align: center;
+        }
+        table.schedule-table th {
+            background-color: #e74c3c;
+            color: #ffffff;
+            font-size: 22px;
+        }
+        table.schedule-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        table.schedule-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        .schedule-header {
+            text-align: center;
+            font-size: 24px;
+            padding: 10px 0;
+            background-color: #34495e;
+            color: #ffffff;
+        }
+        a[name] {
+            display: block;
+            position: relative;
+            top: -60px;
+            visibility: hidden;
+        }
+        #goUpBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #e74c3c;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.5s, transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        #goUpBtn.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        #goUpBtn.hide {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        #goUpBtn:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <h1>Розклад занять групи</h1>
+    <table class="days-table">
+        <tr>
+            <td><a href="#ПН">Понеділок</a></td>
+            <td><a href="#ВТ">Вівторок</a></td>
+            <td><a href="#СР">Середа</a></td>
+            <td><a href="#ЧТ">Четвер</a></td>
+            <td><a href="#ПТ">П’ятниця</a></td>
+            <td><a href="#СБ">Субота</a></td>
+        </tr>
+    </table>
+
+    <section class="schedule-section" id="ПН">
+        <a name="ПН"></a>
+        <table class="schedule-table">
+            <tr>
+                <th colspan="6" class="schedule-header">Понеділок</th>
+            </tr>
+            <tr>
+                <th>Час</th>
+                <th>Предмет 1</th>
+                <th>Предмет 2</th>
+                <th>Предмет 3</th>
+                <th>Предмет 4</th>
+                <th>Предмет 5</th>
+            </tr>
+            <tr>
+                <td>08:00 - 09:30</td>
+                <td>Математика</td>
+                <td>Фізика</td>
+                <td>Хімія</td>
+                <td>Література</td>
+                <td>Історія</td>
+            </tr>
+            <tr>
+                <td>10:00 - 11:30</td>
+                <td>Біологія</td>
+                <td>Іноземна мова</td>
+                <td>Географія</td>
+                <td>Музика</td>
+                <td>Фізкультура</td>
+            </tr>
+            <tr>
+                <td>12:00 - 13:30</td>
+                <td>Інформатика</td>
+                <td>Математика</td>
+                <td>Фізика</td>
+                <td>Хімія</td>
+                <td>Література</td>
+            </tr>
+            <tr>
+                <td>14:00 - 15:30</td>
+                <td>Біологія</td>
+                <td>Іноземна мова</td>
+                <td>Географія</td>
+                <td>Музика</td>
+                <td>Фізкультура</td>
+            </tr>
+            <tr>
+                <td>16:00 - 17:30</td>
+                <td>Інформатика</td>
+                <td>Математика</td>
+                <td>Фізика</td>
+                <td>Хімія</td>
+                <td>Література</td>
+            </tr>
+            <tr>
+                <td>18:00 - 19:30</td>
+                <td>Біологія</td>
+                <td>Іноземна мова</td>
+                <td>Географія</td>
+                <td>Музика</td>
+                <td>Фізкультура</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="schedule-section" id="ВТ">
+        <a name="ВТ"></a>
+        <table class="schedule-table">
+            <tr>
+                <th colspan="6" class="schedule-header">Вівторок</th>
+            </tr>
+            <tr>
+                <th>Час</th>
+                <th>Предмет 1</th>
+                <th>Предмет 2</th>
+                <th>Предмет 3</th>
+                <th>Предмет 4</th>
+                <th>Предмет 5</th>
+            </tr>
+            <tr>
+                <td>08:00 - 09:30</td>
+                <td>Іноземна мова</td>
+                <td>Географія</td>
+                <td>Математика</td>
+                <td>Література</td>
+                <td>Фізкультура</td>
+            </tr>
+            <tr>
+                <td>10:00 - 11:30</td>
+                <td>Хімія</td>
+                <td>Фізика</td>
+                <td>Біологія</td>
+                <td>Музика</td>
+                <td>Інформатика</td>
+            </tr>
+            <tr>
+                <td>12:00 - 13:30</td>
+                <td>Математика</td>
+                <td>Іноземна мова</td>
+                <td>Географія</td>
+                <td>Хімія</td>
+                <td>Література</td>
+            </tr>
+            <tr>
+                <td>14:00 - 15:30</td>
+                <td>Фізика</td>
+                <td>Біологія</td>
+                <td>Інформатика</td>
+                <td>Музика</td>
+                <td>Фізкультура</td>
+            </tr>
+            <tr>
+                <td>16:00 - 17:30</td>
+                <td>Математика</td>
+                <td>Іноземна мова</td>
+                <td>Географія</td>
+                <td>Хімія</td>
+                <td>Література</td>
+            </tr>
+            <tr>
+                <td>18:00 - 19:30</td>
+                <td>Фізика</td>
+                <td>Біологія</td>
+                <td>Інформатика</td>
+                <td>Музика</td>
+                <td>Фізкультура</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="schedule-section" id="СР">
+        <a name="СР"></a>
+        <table class="schedule-table">
+            <tr>
+                <th colspan="6" class="schedule-header">Середа</th>
+            </tr>
+            <tr>
+                <th>Час</th>
+                <th>Предмет 1</th>
+                <th>Предмет 2</th>
+                <th>Предмет 3</th>
+                <th>Предмет 4</th>
+                <th>Предмет 5</th>
+            </tr>
+            <tr>
+                <td>08:00 - 09:30</td>
+                <td>Хімія</td>
+                <td>Математика</td>
+                <td>Фізика</td>
+                <td>Література</td>
+                <td>Історія</td>
+            </tr>
+            <tr>
+                <td>10:00 - 11:30</td>
+                <td>Інформатика</td>
+                <td>Біологія</td>
+                <td>Іноземна мова</td>
+                <td>Музика</td>
+                <td>Фізкультура</td>
+            </tr>
+            <tr>
+                <td>12:00 - 13:30</td>
+                <td>Фізика</td>
+                <td>Хімія</td>
+                <td>Математика</td>
+                <td>Література</td>
+                <td>Інформатика</td>
+            </tr>
+            <tr>
+                <td>14:00 - 15:30</td>
+                <td>Біологія</td>
+                <td>Іноземна мова</td>
+                <td>Географія</td>
+                <td>Музика</td>
+                <td>Фізкультура</td>
+            </tr>
+            <tr>
+                <td>16:00 - 17:30</td>
+                <td>Фізика</td>
+                <td>Хімія</td>
+                <td>Математика</td>
+                <td>Література</td>
+                <td>Інформатика</td>
+            </tr>
+            <tr>
+                <td>18:00 - 19:30</td>
+                <td>Біологія</td>
+                <td>Іноземна мова</td>
+                <td>Географія</td>
+                <td>Музика</td>
+                <td>Фізкультура</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="schedule-section" id="ЧТ">
+        <a name="ЧТ"></a>
+        <table class="schedule-table">
+            <tr>
+                <th colspan="6" class="schedule-header">Четвер</th>
+            </tr>
+            <tr>
+                <th>Час</th>
+                <th>Предмет 1</th>
+                <th>Предмет 2</th>
+                <th>Предмет 3</th>
+                <th>Предмет 4</th>
+                <th>Предмет 5</th>
+            </tr>
+            <tr>
+                <td>08:00 - 09:30</td>
+                <td>Математика</td>
+                <td>Фізика</td>
+                <td>Хімія</td>
+                <td>Література</td>
+                <td>Історія</td>
+            </tr>
+            <tr>
+                <td>10:00 - 11:30</td>
+                <td>Біологія</td>
+                <td>Іноземна мова</td>
+                <td>Географія</td>
+                <td>Музика</td>
+                <td>Фізкультура</td>
+            </tr>
+            <tr>
+                <td>12:00 - 13:30</td>
+                <td>Інформатика</td>
+                <td>Математика</td>
+                <td>Фізика</td>
+                <td>Хімія</td>
+                <td>Література</td>
+            </tr>
+            <tr>
+                <td>14:00 - 15:30</td>
+                <td>Біологія</td>
+                <td>Іноземна мова</td>
+                <td>Географія</td>
+                <td>Музика</td>
+                <td>Фізкультура</td>
+            </tr>
+            <tr>
+                <td>16:00 - 17:30</td>
+                <td>Інформатика</td>
+                <td>Математика</td>
+                <td>Фізика</td>
+                <td>Хімія</td>
+                <td>Література</td>
+            </tr>
+            <tr>
+                <td>18:00 - 19:30</td>
+                <td>Біологія</td>
+                <td>Іноземна мова</td>
+                <td>Географія</td>
+                <td>Музика</td>
+                <td>Фізкультура</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="schedule-section" id="ПТ">
+        <a name="ПТ"></a>
+        <table class="schedule-table">
+            <tr>
+                <th colspan="6" class="schedule-header">П’ятниця</th>
+            </tr>
+            <tr>
+                <th>Час</th>
+                <th>Предмет 1</th>
+                <th>Предмет 2</th>
+                <th>Предмет 3</th>
+                <th>Предмет 4</th>
+                <th>Предмет 5</th>
+            </tr>
+            <tr>
+                <td>08:00 - 09:30</td>
+                <td>Математика</td>
+                <td>Фізика</td>
+                <td>Хімія</td>
+                <td>Література</td>
+                <td>Історія</td>
+            </tr>
+            <tr>
+                <td>10:00 - 11:30</td>
+                <td>Біологія</td>
+                <td>Іноземна мова</td>
+                <td>Географія</td>
+                <td>Музика</td>
+                <td>Фізкультура</td>
+            </tr>
+            <tr>
+                <td>12:00 - 13:30</td>
+                <td>Інформатика</td>
+                <td>Математика</td>
+                <td>Фізика</td>
+                <td>Хімія</td>
+                <td>Література</td>
+            </tr>
+            <tr>
+                <td>14:00 - 15:30</td>
+                <td>Біологія</td>
+                <td>Іноземна мова</td>
+                <td>Географія</td>
+                <td>Музика</td>
+                <td>Фізкультура</td>
+            </tr>
+            <tr>
+                <td>16:00 - 17:30</td>
+                <td>Інформатика</td>
+                <td>Математика</td>
+                <td>Фізика</td>
+                <td>Хімія</td>
+                <td>Література</td>
+            </tr>
+            <tr>
+                <td>18:00 - 19:30</td>
+                <td>Біологія</td>
+                <td>Іноземна мова</td>
+                <td>Географія</td>
+                <td>Музика</td>
+                <td>Фізкультура</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="schedule-section" id="СБ">
+        <a name="СБ"></a>
+        <table class="schedule-table">
+            <tr>
+                <th colspan="6" class="schedule-header">Субота</th>
+            </tr>
+            <tr>
+                <th>Час</th>
+                <th>Предмет 1</th>
+                <th>Предмет 2</th>
+                <th>Предмет 3</th>
+                <th>Предмет 4</th>
+                <th>Предмет 5</th>
+            </tr>
+            <tr>
+                <td>09:00 - 10:30</td>
+                <td>Математика</td>
+                <td>Фізика</td>
+                <td>Хімія</td>
+                <td>Література</td>
+                <td>Історія</td>
+            </tr>
+            <tr>
+                <td>11:00 - 12:30</td>
+                <td>Біологія</td>
+                <td>Іноземна мова</td>
+                <td>Географія</td>
+                <td>Музика</td>
+                <td>Фізкультура</td>
+            </tr>
+            <tr>
+                <td>13:00 - 14:30</td>
+                <td>Інформатика</td>
+                <td>Математика</td>
+                <td>Фізика</td>
+                <td>Хімія</td>
+                <td>Література</td>
+            </tr>
+            <tr>
+                <td>15:00 - 16:30</td>
+                <td>Біологія</td>
+                <td>Іноземна мова</td>
+                <td>Географія</td>
+                <td>Музика</td>
+                <td>Фізкультура</td>
+            </tr>
+            <tr>
+                <td>17:00 - 18:30</td>
+                <td>Інформатика</td>
+                <td>Математика</td>
+                <td>Фізика</td>
+                <td>Хімія</td>
+                <td>Література</td>
+            </tr>
+            <tr>
+                <td>19:00 - 20:30</td>
+                <td>Біологія</td>
+                <td>Іноземна мова</td>
+                <td>Географія</td>
+                <td>Музика</td>
+                <td>Фізкультура</td>
+            </tr>
+        </table>
+    </section>
+
+    <button id="goUpBtn">Вгору</button>
+
+    <script>
+        const goUpBtn = document.getElementById('goUpBtn');
+
+        // Show or hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                goUpBtn.classList.add('show');
+                goUpBtn.classList.remove('hide');
+            } else {
+                goUpBtn.classList.add('hide');
+                goUpBtn.classList.remove('show');
+            }
+        });
+
+        // Scroll to top smoothly when the button is clicked
+        goUpBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

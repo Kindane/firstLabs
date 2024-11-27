@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>LutitskyiLab03-5</title>
+    <meta name="description" content="Сторінка, що демонструє фотографії з надписами">
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 35pt;
+            font-weight: bold;
+            color: #8B0000;
+            margin-bottom: 40px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .photo {
+            width: 200px;
+        }
+        .photo img {
+            border: 5px solid #800080;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .caption {
+            margin-top: 10px;
+            font-size: 14pt;
+            font-style: italic;
+            color: #000000;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>LutitskyiLab03-5</h1>
+
+    <div class="gallery">
+        <div class="photo">
+            <img src="/Task3/image/bg.gif" alt="Фонова анімація">
+            <div class="caption">Фонова анімація</div>
+        </div>
+        <div class="photo">
+            <img src="/Task3/image/bg.jpg" alt="Стійкий фон">
+            <div class="caption">Стійкий фон</div>
+        </div>
+        <div class="photo">
+            <img src="/Task3/image/clock.jpg" alt="Годинник">
+            <div class="caption">Годинник</div>
+        </div>
+        <div class="photo">
+            <img src="/Task3/image/logo.jpg" alt="Логотип">
+            <div class="caption">Логотип</div>
+        </div>
+    </div>
+
+</body>
+</html>

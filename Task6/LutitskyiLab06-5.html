@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Сенсорне Зображення - Зірки</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .tooltip {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            display: none;
+            pointer-events: none;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Сенсорне Зображення - Зірки</h1>
+
+<div style="position: relative; display: inline-block;">
+    <img src="image/photo_5332441961342297018_w.jpg" usemap="#image-map" alt="Карта із зірками">
+
+    <div id="tooltip" class="tooltip"></div>
+
+    <map name="image-map">
+        <area target="" title="Зірка 1" href="#" coords="86,25,67,41,90,60,106,41" shape="poly" data-tooltip="Це зірка 1">
+        <area target="" title="Зірка 2" href="#" coords="242,96,266,72,289,96,266,116" shape="poly" data-tooltip="Це зірка 2">
+        <area target="" title="Зірка 3" href="#" coords="146,199,180,183,193,154,202,180,241,197,206,207,198,240,183,206" shape="poly" data-tooltip="Це зірка 3">
+        <area target="" title="Зірка 4" href="#" coords="302,243,336,231,348,202,362,228,395,243,361,254,349,287,335,254" shape="poly" data-tooltip="Це зірка 4">
+        <area target="" title="Зірка 5" href="#" coords="375,151,418,136,432,103,446,138,483,151,447,161,432,208,419,159" shape="poly" data-tooltip="Це зірка 5">
+        <area target="" title="Зірка 6" href="#" coords="579,172,565,221,516,239,563,254,581,304,597,255,645,239,597,223" shape="poly" data-tooltip="Це зірка 6">
+        <area target="" title="Зірка 7" href="#" coords="526,358,539,399,589,414,541,425,525,476,512,425,468,414,512,396" shape="poly" data-tooltip="Це зірка 7">
+        <area target="" title="Зірка 8" href="#" coords="635,473,761,434,803,301,844,430,971,473,842,509,805,641,767,506" shape="poly" data-tooltip="Це зірка 8">
+        <area target="" title="Зірка 9" href="#" coords="718,144,770,125,788,72,806,123,860,144,803,157,788,213,772,157" shape="poly" data-tooltip="Це зірка 9">
+        <area target="" title="Зірка 10" href="#" coords="920,238,976,218,996,164,1009,222,1067,238,1012,251,996,324,978,251" shape="poly" data-tooltip="Це зірка 10">
+        <area target="" title="Зірка 11" href="#" coords="1111,250,1237,211,1278,82,1315,211,1443,247,1314,285,1276,415,1244,285" shape="poly" data-tooltip="Це зірка 11">
+        <area target="" title="Зірка 12" href="#" coords="1139,343,1201,518,1384,578,1196,631,1141,812,1084,631,898,580,1084,526" shape="poly" data-tooltip="Це зірка 12">
+    </map>
+</div>
+
+<script>
+    const tooltip = document.getElementById('tooltip');
+    const areas = document.querySelectorAll('area');
+
+    areas.forEach(area => {
+        area.addEventListener('mousemove', (e) => {
+            const text = area.getAttribute('data-tooltip');
+            tooltip.textContent = text;
+            tooltip.style.display = 'block';
+            tooltip.style.left = e.pageX + 10 + 'px';
+            tooltip.style.top = e.pageY + 10 + 'px';
+        });
+
+        area.addEventListener('mouseleave', () => {
+            tooltip.style.display = 'none';
+        });
+    });
+</script>
+
+</body>
+</html>

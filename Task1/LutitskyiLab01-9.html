@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>LutitskyiLab01-9</title>
+    <meta name="description" content="Документ про багаторічні садові квіти та основи програмування">
+    <meta name="keywords" content="багаторічні квіти, садові рослини, програмування, асемблер, хобі">
+    <style>
+        body {
+            background-color: #f0f8ff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            font-size: 35pt;
+            font-weight: bold;
+            color: #8B0000;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .toc {
+            margin-bottom: 40px;
+        }
+        .toc ul {
+            list-style-type: disc;
+            padding-left: 40px;
+        }
+        .toc li a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #800080;
+            font-size: 20pt;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .toc li a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            font-size: 20pt;
+            font-weight: bold;
+            color: #800080;
+            text-transform: capitalize;
+            margin-bottom: 15px;
+        }
+        .section p {
+            font-size: 14pt;
+            font-style: italic;
+            text-align: justify;
+            text-indent: 2%;
+            margin-bottom: 15px;
+        }
+        .highlight {
+            font-weight: bold;
+            font-style: italic;
+            text-decoration: underline;
+        }
+        .code-block {
+            background-color: #e0e0e0;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: "Courier New", monospace;
+            white-space: pre;
+            overflow-x: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .signature {
+            text-align: center;
+            font-size: 16pt;
+            font-weight: bold;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>LutitskyiLab01-9</h1>
+
+    <div class="toc">
+        <ul>
+            <li><a href="#about">Про себе</a></li>
+            <li><a href="#hobby">Моє хобі</a></li>
+        </ul>
+    </div>
+
+    <div id="about" class="section">
+        <h2>Про себе</h2>
+        <p>Мене звати Максим, я студент групи <span class="highlight">305-ТН</span>. З дитинства мене захоплювали <span class="highlight">наука</span> та техніка. Особливо мене цікавить світ комп'ютерних технологій та програмування. Я завжди прагну розширювати свої знання та навички у цій сфері, адже вважаю її надзвичайно перспективною.</p>
+        <p>Освіта для мене є неперервним процесом самовдосконалення. Я активно беру участь у різноманітних семінарах та тренінгах, що дозволяє мені бути в курсі останніх тенденцій та розробок у сфері IT. У вільний час я люблю читати технічну літературу та експериментувати з новими програмними мовами.</p>
+    </div>
+
+    <div id="hobby" class="section">
+        <h2>Моє хобі</h2>
+        <p>Одним з моїх головних захоплень є <span class="highlight">садівництво</span>. Я насолоджуюся процесом вирощування багаторічних квітів, таких як георгіна, ірис, фрезія, різанка та лілія павича. Ці рослини не лише додають краси моєму саду, але й створюють затишну атмосферу для відпочинку та релаксації.</p>
+        <p>Крім садівництва, я захоплююсь <span class="highlight">програмуванням</span>. Це хобі дозволяє мені виражати свою творчість та логічне мислення через розробку різноманітних програм та додатків. Програмування стало невід'ємною частиною мого життя, і я постійно прагну навчатися новим мовам та технологіям.</p>
+        
+        <h3>Програмування</h3>
+        <div class="code-block">
+section .data
+    msg db 'Hello World!',0
+
+section .text
+    global _start
+
+_start:
+    ; write(1, msg, 13)
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, msg
+    mov edx, 13
+    int 0x80
+
+    ; exit(0)
+    mov eax, 1
+    xor ebx, ebx
+    int 0x80
+        </div>
+    </div>
+
+    <div class="signature">
+        Студент групи 305-ТН Лутицький М.С.
+    </div>
+
+</body>
+</html>

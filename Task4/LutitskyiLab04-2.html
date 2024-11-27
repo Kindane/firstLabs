@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна Робота 04-1</title>
+    <meta name="description" content="Створення п'яти горизонтальних рядків з рухомим текстом з різними анімаціями">
+    <meta name="keywords" content="HTML, CSS, анімація, рухомий текст, веб-сторінка">
+    <style>
+        body {
+            background-color: #2c3e50;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #ffffff;
+            text-align: center;
+        }
+        h1 {
+            font-size: 35pt;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 40px;
+        }
+        .ribbon {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+        .ribbon .text {
+            position: absolute;
+            white-space: nowrap;
+            font-size: 18pt;
+            font-weight: bold;
+            font-style: italic;
+            color: #ffffff;
+        }
+        .ribbon1 {
+            background-color: #3498db;
+        }
+        .ribbon1 .text {
+            animation: oscillate 10s infinite ease-in-out;
+        }
+        @keyframes oscillate {
+            0% { transform: translateX(-100vw); }
+            50% { transform: translateX(100vw); }
+            100% { transform: translateX(-100vw); }
+        }
+        .ribbon2 {
+            background-color: #9b59b6;
+        }
+        .ribbon2 .text {
+            animation: marqueeRightToLeft 6s linear infinite;
+        }
+        @keyframes marqueeRightToLeft {
+            0% { transform: translateX(100vw); }
+            100% { transform: translateX(-100vw); }
+        }
+        .ribbon3 {
+            background-color: #e67e22;
+        }
+        .ribbon3 .text {
+            animation: marqueeLeftToRight 5s forwards;
+        }
+        @keyframes marqueeLeftToRight {
+            0% { transform: translateX(-100vw); }
+            100% { transform: translateX(100vw); }
+        }
+        .ribbon4 {
+            background-color: #2ecc71;
+        }
+        .ribbon4 .text {
+            animation: marqueeRightToLeftFast 5s linear infinite;
+        }
+        @keyframes marqueeRightToLeftFast {
+            0% { transform: translateX(100vw); }
+            100% { transform: translateX(-100vw); }
+        }
+        .ribbon5 {
+            background-color: #e74c3c;
+        }
+        .ribbon5 .text {
+            animation: marqueeRightToLeftSlow 10s linear infinite;
+        }
+        @keyframes marqueeRightToLeftSlow {
+            0% { transform: translateX(100vw); }
+            100% { transform: translateX(-100vw); }
+        }
+        #restartBtn {
+            display: block;
+            margin: 30px auto;
+            padding: 10px 20px;
+            font-size: 16pt;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #e74c3c;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        #restartBtn:hover {
+            background-color: #c0392b;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h1>Рядки з Рухомим Текстом</h1>
+    <div class="ribbon ribbon1">
+        <span class="text">Текст, що коливається з боку в бік</span>
+    </div>
+    <div class="ribbon ribbon2">
+        <span class="text">Текст, що пробігає справа наліво та з’являється знову</span>
+    </div>
+    <div class="ribbon ribbon3">
+        <span class="text">Текст, що пробігає зліва направо та зупиняється</span>
+    </div>
+    <div class="ribbon ribbon4">
+        <span class="text">Текст, що переміщується з швидкістю 2</span>
+    </div>
+    <div class="ribbon ribbon5">
+        <span class="text">Текст, що переміщується з швидкістю 1</span>
+    </div>
+    <button id="restartBtn">Перезапуск</button>
+    <script>
+        const restartBtn = document.getElementById('restartBtn');
+        const texts = document.querySelectorAll('.text');
+
+        function restartAnimations() {
+            texts.forEach(text => {
+                text.style.animation = 'none';
+                void text.offsetWidth;
+                text.style.animation = '';
+            });
+        }
+
+        restartBtn.addEventListener('click', restartAnimations);
+    </script>
+</body>
+</html>

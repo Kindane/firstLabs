@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма збору комп'ютера</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f3;
+            margin: 20px;
+        }
+        h2 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="password"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .radio-group,
+        .checkbox-group {
+            margin-top: 5px;
+        }
+        .radio-group label,
+        .checkbox-group label {
+            display: inline-block;
+            margin-right: 15px;
+            font-weight: normal;
+        }
+        .buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .buttons input {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .buttons input[type="submit"] {
+            background-color: #27ae60;
+            color: #ffffff;
+        }
+        .buttons input[type="reset"] {
+            background-color: #c0392b;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <h2>Форма збору комп'ютера</h2>
+    <form action="result2.html" method="get">
+        <label for="username">Ваше ім'я:</label>
+        <input type="text" id="username" name="username" maxlength="50" required>
+        <label for="password">Код перевірки:</label>
+        <input type="password" id="password" name="password" maxlength="20" required>
+        <label>Тип корпусу:</label>
+        <div class="radio-group">
+            <label><input type="radio" name="case_type" value="ATX" required> ATX</label>
+            <label><input type="radio" name="case_type" value="Micro-ATX"> Micro-ATX</label>
+            <label><input type="radio" name="case_type" value="Mini-ITX"> Mini-ITX</label>
+        </div>
+        <label>Обрати компоненти:</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="components" value="CPU" checked> Процесор (CPU)</label>
+            <label><input type="checkbox" name="components" value="GPU"> Відеокарта (GPU)</label>
+            <label><input type="checkbox" name="components" value="RAM"> Оперативна пам'ять (RAM)</label>
+            <label><input type="checkbox" name="components" value="SSD"> Твердотільний накопичувач (SSD)</label>
+            <label><input type="checkbox" name="components" value="HDD"> Жорсткий диск (HDD)</label>
+        </div>
+        <label for="budget">Бюджет (грн):</label>
+        <select id="budget" name="budget" required>
+            <option value="" disabled selected>Виберіть ваш бюджет</option>
+            <option value="до_10000">до 10,000</option>
+            <option value="10001_20000">10,001 - 20,000</option>
+            <option value="20001_30000">20,001 - 30,000</option>
+            <option value="більше_30000">Більше 30,000</option>
+        </select>
+        <label for="additional">Додаткові вимоги або коментарі:</label>
+        <textarea id="additional" name="additional" rows="4" placeholder="Введіть ваші коментарі тут..."></textarea>
+        <div class="buttons">
+            <input type="submit" value="Надіслати">
+            <input type="reset" value="Очистити">
+        </div>
+    </form>
+</body>
+</html>
